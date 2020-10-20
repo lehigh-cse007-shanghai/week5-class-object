@@ -5,13 +5,9 @@
 package assignment;
 
 public class App {
-  public String getGreeting() {
-    return "Hello world.";
-  }
-
   public static void main(String[] args) {
-    // Make the necessary and meaningful modification on the
-    // Point, Segment and Triangle class so the the code would run correctly,
+    // Make the necessary and meaningful modifications on the
+    // Point, Segment and Triangle classes so the the code would run correctly,
     // both from a code point of view, and from a mathematical point of view.
     Point p1 = new Point();
     Point p2 = new Point();
@@ -40,6 +36,7 @@ public class App {
       Point(0, 0)
       Point(0, 4)
       Triangle(Segment(Point(0, 0), Point(3, 0)), Segment(Point(3, 0), Point(0, 4)), Segment(Point(0, 0), Point(0, 4)))
+      true
     */
     System.out.println(triangle.p1.whoAmI() );
     System.out.println(triangle.p2.whoAmI() );
@@ -54,5 +51,7 @@ public class App {
     System.out.println(triangle.s3.p1.whoAmI() );
     System.out.println(triangle.s3.p2.whoAmI() );
     System.out.println(triangle.whoAmI() );
+    System.out.println(triangle.isRightTriangle() );
+
   }
 }

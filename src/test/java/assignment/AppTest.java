@@ -4,24 +4,17 @@
 
 package assignment;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AppTest {
-  @Test
-  public void testApp_has_a_greeting() {
-    App classUnderTest = new App();
-    assertNotNull("app should have a greeting", classUnderTest.getGreeting());
-  }
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+public class AppTest {
   private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
   private final PrintStream originalOut = System.out;
 
@@ -36,58 +29,118 @@ public class AppTest {
   }
 
   @Test
-  public void out() {
-    App.main(null);
-    assertEquals("Hello world.\n", outContent.toString());
+  public void test1(){
+    Point p1 = new Point();
+    Point p2 = new Point();
+    Point p3 = new Point();
+    p1.x = 1;
+    p1.y = 2;
+    p2.x = 3;
+    p2.y = 4;
+    p3.x = 5;
+    p3.y = 6;
+    Triangle triangle = new Triangle();
+    triangle.p1 = p1;
+    triangle.p2 = p2;
+    triangle.p3 = p3;
+    triangle.sortPoints();
+    triangle.deriveSegmentsFromPoints();
+
+    String result = "";
+    result += triangle.p1.whoAmI();
+    result += triangle.p2.whoAmI();
+    result += triangle.p3.whoAmI();
+    result += triangle.s1.whoAmI();
+    result += triangle.s1.p1.whoAmI();
+    result += triangle.s1.p2.whoAmI();
+    result += triangle.s2.whoAmI();
+    result += triangle.s2.p1.whoAmI();
+    result += triangle.s2.p2.whoAmI();
+    result += triangle.s3.whoAmI();
+    result += triangle.s3.p1.whoAmI();
+    result += triangle.s3.p2.whoAmI();
+    result += triangle.whoAmI();
+
+    String correct_answer = "Point(1, 2)Point(3, 4)Point(5, 6)Segment(Point(1, 2), Point(3, 4))Point(1, 2)Point(3, 4)Segment(Point(3, 4), Point(5, 6))Point(3, 4)Point(5, 6)Segment(Point(1, 2), Point(5, 6))Point(1, 2)Point(5, 6)Triangle(Segment(Point(1, 2), Point(3, 4)), Segment(Point(3, 4), Point(5, 6)), Segment(Point(1, 2), Point(5, 6)))";
+
+    assertEquals(result, correct_answer);
+  }
+
+
+  @Test
+  public void test2(){
+    Point p1 = new Point();
+    Point p2 = new Point();
+    Point p3 = new Point();
+    p1.x = 3;
+    p1.y = 4;
+    p2.x = 1;
+    p2.y = 2;
+    p3.x = 5;
+    p3.y = 6;
+    Triangle triangle = new Triangle();
+    triangle.p1 = p1;
+    triangle.p2 = p2;
+    triangle.p3 = p3;
+    triangle.sortPoints();
+    triangle.deriveSegmentsFromPoints();
+
+    String result = "";
+    result += triangle.p1.whoAmI();
+    result += triangle.p2.whoAmI();
+    result += triangle.p3.whoAmI();
+    result += triangle.s1.whoAmI();
+    result += triangle.s1.p1.whoAmI();
+    result += triangle.s1.p2.whoAmI();
+    result += triangle.s2.whoAmI();
+    result += triangle.s2.p1.whoAmI();
+    result += triangle.s2.p2.whoAmI();
+    result += triangle.s3.whoAmI();
+    result += triangle.s3.p1.whoAmI();
+    result += triangle.s3.p2.whoAmI();
+    result += triangle.whoAmI();
+
+    String correct_answer = "Point(1, 2)Point(3, 4)Point(5, 6)Segment(Point(1, 2), Point(3, 4))Point(1, 2)Point(3, 4)Segment(Point(3, 4), Point(5, 6))Point(3, 4)Point(5, 6)Segment(Point(1, 2), Point(5, 6))Point(1, 2)Point(5, 6)Triangle(Segment(Point(1, 2), Point(3, 4)), Segment(Point(3, 4), Point(5, 6)), Segment(Point(1, 2), Point(5, 6)))";
+
+    assertEquals(result, correct_answer);
   }
 
   @Test
-  public void challenge1(){
-    App classUnderTest = new App();
-    String answer = "a + b - 2 * c2 * x / (y * z)(x + 3) * (n % p)-a / -(b + c)x / y % -zx / (y % -z)";
-    assertEquals(answer, classUnderTest.challenge1());
+  public void test3(){
+    Point p1 = new Point();
+    Point p2 = new Point();
+    Point p3 = new Point();
+    p1.x = 3;
+    p1.y = 4;
+    p2.x = 5;
+    p2.y = 6;
+    p3.x = 1;
+    p3.y = 2;
+    Triangle triangle = new Triangle();
+    triangle.p1 = p1;
+    triangle.p2 = p2;
+    triangle.p3 = p3;
+    triangle.sortPoints();
+    triangle.deriveSegmentsFromPoints();
+
+    String result = "";
+    result += triangle.p1.whoAmI();
+    result += triangle.p2.whoAmI();
+    result += triangle.p3.whoAmI();
+    result += triangle.s1.whoAmI();
+    result += triangle.s1.p1.whoAmI();
+    result += triangle.s1.p2.whoAmI();
+    result += triangle.s2.whoAmI();
+    result += triangle.s2.p1.whoAmI();
+    result += triangle.s2.p2.whoAmI();
+    result += triangle.s3.whoAmI();
+    result += triangle.s3.p1.whoAmI();
+    result += triangle.s3.p2.whoAmI();
+    result += triangle.whoAmI();
+
+    String correct_answer = "Point(1, 2)Point(3, 4)Point(5, 6)Segment(Point(1, 2), Point(3, 4))Point(1, 2)Point(3, 4)Segment(Point(3, 4), Point(5, 6))Point(3, 4)Point(5, 6)Segment(Point(1, 2), Point(5, 6))Point(1, 2)Point(5, 6)Triangle(Segment(Point(1, 2), Point(3, 4)), Segment(Point(3, 4), Point(5, 6)), Segment(Point(1, 2), Point(5, 6)))";
+
+    assertEquals(result, correct_answer);
   }
 
-  @Test
-  public void challenge2(){
-    App classUnderTest = new App();
-    String answer = "value:30, type:intvalue:210, type:intvalue:200, type:intvalue:6100, type:longvalue:50002.5, " +
-        "type:floatvalue:400.0, type:floatvalue:800.0, type:doublevalue:800.0, type:float";
-    assertEquals(answer, classUnderTest.challenge2());
-  }
-
-  @Test
-  public void challenge3(){
-    App classUnderTest = new App();
-    String answer = "21";
-    assertEquals(answer, classUnderTest.challenge3());
-  }
-
-  @Test
-  public void challenge4(){
-    App classUnderTest = new App();
-    String answer = "value:61, type:intvalue:120, type:intvalue:2, type:intvalue:600, type:int";
-    assertEquals(answer, classUnderTest.challenge4());
-  }
-
-  @Test
-  public void challenge5(){
-    App classUnderTest = new App();
-    String answer = "false 10 5false10 6true 10 7true 10 7";
-    assertEquals(answer, classUnderTest.challenge5());
-  }
-
-  @Test
-  public void challenge6(){
-    App classUnderTest = new App();
-    String answer = "falsetruefalsetruetruefalsefalsetrue";
-    assertEquals(answer, classUnderTest.challenge6());
-  }
-
-  @Test
-  public void challenge7(){
-    App classUnderTest = new App();
-    String answer = "i=1 n=0i=11 n=11i=21 j=6 n=120i=18 n=18i=12 j=4 n=12";
-    assertEquals(answer, classUnderTest.challenge7());
-  }
 }

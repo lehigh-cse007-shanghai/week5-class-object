@@ -18,7 +18,6 @@ public class Triangle {
     // s1 will be: (p1, p2)
     // s2 will be: (p2, p3)
     // s3 will be: (p1, p3)
-    // In this way, each segment is sorted.
     void deriveSegmentsFromPoints()
     {
         // write your code here.
@@ -28,11 +27,11 @@ public class Triangle {
     // This is the ONLY advanced task of this assignment.
     // This function won't be tested. Please share your code in the WeChat group and
     // have a good discussion about it.
-    // We could have many different manners of doing it.
+    // We could have many different manners of implementing it.
     boolean isRightTriangle()
     {
         // write your code here.
-        return true;
+        return false;
     }
 
     String whoAmI()
