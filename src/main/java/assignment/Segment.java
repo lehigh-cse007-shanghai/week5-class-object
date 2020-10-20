@@ -4,9 +4,11 @@ public class Segment {
     // write your code here.
     // add attributes (p1 and p2) that represent the two points of a segment.
 
-    // sort the the points of a segment, according to its distance to point (0, 0).
+    // sort the two points of a segment, according to its distance to point (0, 0).
     // p1 will be the nearer point
     // p2 will be the more far away point
+    // In this way, p1(1, 2) + p2(3, 4) will be the same segment as p1(3, 4) + p2(1, 2)
+    // But both segments will be represented as: p1(1, 2) + p2(3, 4)
     void sortPoints()
     {
         // write your code here.
@@ -14,9 +16,6 @@ public class Segment {
 
     String whoAmI()
     {
-        // write your code here.
-        // the returned msg should be:
-        // "Segment(" + p1.whoAmI() + ", " + p2.whoAmI() + ")"
         return ""; // modify the code, return something else here.
     }
 

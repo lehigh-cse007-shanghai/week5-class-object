@@ -10,6 +10,8 @@ public class Triangle {
     // sort the the points of a triangle, according to its distance to point (0, 0).
     // p1 will be the nearest point
     // p3 will be the most far away point
+    // In this way, p1(1, 2) + p2(3, 4) + p3(5, 8) will be the same triangle as p1(3, 4) + p2(5, 8) + p3(1, 2)
+    // But both triangles will be represented as: p1(1, 2) + p2(3, 4) + p3(5, 8)
     void sortPoints()
     {
         // write your code here.
@@ -36,9 +38,6 @@ public class Triangle {
 
     String whoAmI()
     {
-        // write your code here.
-        // the returned msg should be:
-        // "Triangle(" + s1.whoAmI() + ", " + s2.whoAmI() + ", " + s3.whoAmI() +  ")";
         return ""; // modify the code, return something else here.
     }
 

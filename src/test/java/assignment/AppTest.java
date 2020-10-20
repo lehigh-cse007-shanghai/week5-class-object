@@ -143,4 +143,81 @@ public class AppTest {
     assertEquals(result, correct_answer);
   }
 
+  @Test
+  public void test4(){
+    Point p1 = new Point();
+    Point p2 = new Point();
+    Point p3 = new Point();
+    p1.x = 1;
+    p1.y = 2;
+    p2.x = 4;
+    p2.y = 3;
+    p3.x = 6;
+    p3.y = 5;
+    Triangle triangle = new Triangle();
+    triangle.p1 = p1;
+    triangle.p2 = p2;
+    triangle.p3 = p3;
+    triangle.sortPoints();
+    triangle.deriveSegmentsFromPoints();
+
+    String result = "";
+    result += triangle.p1.whoAmI();
+    result += triangle.p2.whoAmI();
+    result += triangle.p3.whoAmI();
+    result += triangle.s1.whoAmI();
+    result += triangle.s1.p1.whoAmI();
+    result += triangle.s1.p2.whoAmI();
+    result += triangle.s2.whoAmI();
+    result += triangle.s2.p1.whoAmI();
+    result += triangle.s2.p2.whoAmI();
+    result += triangle.s3.whoAmI();
+    result += triangle.s3.p1.whoAmI();
+    result += triangle.s3.p2.whoAmI();
+    result += triangle.whoAmI();
+
+    String correct_answer = "Point(1, 2)Point(4, 3)Point(6, 5)Segment(Point(1, 2), Point(4, 3))Point(1, 2)Point(4, 3)Segment(Point(4, 3), Point(6, 5))Point(4, 3)Point(6, 5)Segment(Point(1, 2), Point(6, 5))Point(1, 2)Point(6, 5)Triangle(Segment(Point(1, 2), Point(4, 3)), Segment(Point(4, 3), Point(6, 5)), Segment(Point(1, 2), Point(6, 5)))";
+
+    assertEquals(result, correct_answer);
+  }
+
+
+  @Test
+  public void test5(){
+    Point p1 = new Point();
+    Point p2 = new Point();
+    Point p3 = new Point();
+    p1.x = 6;
+    p1.y = 5;
+    p2.x = 4;
+    p2.y = 3;
+    p3.x = 1;
+    p3.y = 2;
+    Triangle triangle = new Triangle();
+    triangle.p1 = p1;
+    triangle.p2 = p2;
+    triangle.p3 = p3;
+    triangle.sortPoints();
+    triangle.deriveSegmentsFromPoints();
+
+    String result = "";
+    result += triangle.p1.whoAmI();
+    result += triangle.p2.whoAmI();
+    result += triangle.p3.whoAmI();
+    result += triangle.s1.whoAmI();
+    result += triangle.s1.p1.whoAmI();
+    result += triangle.s1.p2.whoAmI();
+    result += triangle.s2.whoAmI();
+    result += triangle.s2.p1.whoAmI();
+    result += triangle.s2.p2.whoAmI();
+    result += triangle.s3.whoAmI();
+    result += triangle.s3.p1.whoAmI();
+    result += triangle.s3.p2.whoAmI();
+    result += triangle.whoAmI();
+
+    String correct_answer = "Point(1, 2)Point(4, 3)Point(6, 5)Segment(Point(1, 2), Point(4, 3))Point(1, 2)Point(4, 3)Segment(Point(4, 3), Point(6, 5))Point(4, 3)Point(6, 5)Segment(Point(1, 2), Point(6, 5))Point(1, 2)Point(6, 5)Triangle(Segment(Point(1, 2), Point(4, 3)), Segment(Point(4, 3), Point(6, 5)), Segment(Point(1, 2), Point(6, 5)))";
+
+    assertEquals(result, correct_answer);
+  }
+
 }

@@ -5,7 +5,6 @@ public class Point {
 
     String whoAmI()
     {
-        // write your code here.
         return ""; // modify the code, return something else here.;
     }
 
